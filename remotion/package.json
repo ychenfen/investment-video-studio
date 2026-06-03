@@ -1,0 +1,26 @@
+{
+  "name": "video-remotion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@fontsource/lora": "^5.2.8",
+    "@fontsource/poppins": "^5.2.7",
+    "@react-three/fiber": "^8.18.0",
+    "@remotion/cli": "^4.0.469",
+    "@remotion/fonts": "^4.0.469",
+    "@remotion/three": "^4.0.469",
+    "@remotion/transitions": "^4.0.469",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.469",
+    "three": "^0.169.0"
+  }
+}
