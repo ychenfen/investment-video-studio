@@ -26,7 +26,10 @@
 │   ├── 04-数据与素材来源.md      视频URL/股票数据/BGM/配音 全部来源
 │   ├── 05-剪映为什么走不通.md    加密结论 + 验证过程
 │   ├── 06-复盘故事视频.md        小于&阿本 剧情复盘视频: 改文案一键重排
-│   └── 07-Hypit试验.md           Hypit 接入试验: 词级锚点/改文案重排/三项指标
+│   ├── 07-Hypit试验.md           Hypit 接入试验: 词级锚点/改文案重排/三项指标
+│   ├── 08-云端工作流.md          云端: 给文案就出片 / 网络白名单 / 素材 key
+│   ├── 09-复盘视频经验总结.md    选型/抓人手法/21 条踩坑
+│   └── 10-参考视频分析.md        对标视频拆解
 ├── scripts/                      可复用脚本
 │   ├── 1-fetch-jensen-video.sh   爬 YouTube 黄仁勋演讲片段
 │   ├── 2-fetch-stock-data.py     akshare 抓 A股/美股 真实 OHLCV
@@ -78,6 +81,19 @@ npx remotion studio
 3. 寒武纪行情(20s)：红涨折线 + 量柱 + 放量/缩量/突破标注 + 免责
 
 全程：WebGL 水波背景（网格随波扭曲 + 流光斑，中央内容不透明挡波浪）、云扬 TTS 配音、字幕逐句对齐、BGM ducking、真实行情数据。
+
+## 给文案就出片（通用讲解视频 · 云端可跑）
+
+在 Claude Code 云端对 Claude 说"用这段文案做个视频"或"做一期XX基本面"，它会：WebSearch 找热点和财报数据 →
+写 `projects/<slug>/script.json` → 配音 → 抓实拍视频/照片素材（记录许可）→ 渲染 → 抽帧验收 → 推送。
+
+```bash
+./scripts/cloud/doctor.sh              # 环境 + 网络体检
+./scripts/studio/run.sh <slug>         # projects/<slug>/script.json → output/<slug>.mp4
+```
+
+画面：封面 / 热点卡 / 指标卡 / 柱状 / 折线 / 多空对比 / 金句 / 选项投票 / 纯实拍，均可叠背景实拍素材。
+示例：`projects/cambricon-fundamentals/`。详见 [docs/08-云端工作流.md](docs/08-云端工作流.md) 和 `CLAUDE.md`。
 
 ## 复盘故事视频（FupanStory）
 

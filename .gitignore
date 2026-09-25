@@ -4,3 +4,5 @@ node_modules/
 .cache/
 scripts/fupan/work/
 __pycache__/
+.venv
+projects/*/build/
