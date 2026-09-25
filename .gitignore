@@ -4,3 +4,6 @@ node_modules/
 .cache/
 scripts/fupan/work/
 __pycache__/
+.venv-cloud/
+content/jobs/*/work/
+remotion/public/cloud/current/

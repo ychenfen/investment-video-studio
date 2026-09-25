@@ -1,0 +1,17 @@
+{
+  "assets": [
+    {
+      "id": "A1",
+      "type": "image",
+      "path": "assets/replace-me.jpg",
+      "source_url": "https://example.com/replace-me",
+      "provider": "TODO: official newsroom, Wikimedia Commons, Pexels, etc.",
+      "creator": "TODO",
+      "license": "TODO: exact license or official media permission",
+      "rights_status": "pending",
+      "truth_label": "真实资料",
+      "credit": "TODO: on-screen/source credit",
+      "sha256": "TODO"
+    }
+  ]
+}

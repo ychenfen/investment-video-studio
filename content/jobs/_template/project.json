@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "slug": "replace-me",
+  "title": "TODO: 10-22 个字的主标题",
+  "subtitle": "TODO: 一句话说明事件与基本面关系",
+  "mode": "fundamental",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "disclaimer": "信息仅供研究交流，不构成投资建议。市场有风险，决策需独立判断。",
+  "voice": {
+    "engine": "edge",
+    "name": "zh-CN-YunyangNeural",
+    "rate": "+8%",
+    "scene_gap": 0.22,
+    "head_silence": 0.15,
+    "tail_silence": 0.8
+  },
+  "asset_policy": {
+    "min_media_assets": 2
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "eyebrow": "热点事件",
+      "headline": "TODO: 反常识钩子",
+      "narration": "TODO",
+      "source_ids": ["S1"],
+      "asset_id": "A1",
+      "bullets": [],
+      "metrics": []
+    },
+    {
+      "id": "event",
+      "eyebrow": "发生了什么",
+      "headline": "TODO: 事件事实",
+      "narration": "TODO",
+      "source_ids": ["S1"],
+      "asset_id": null,
+      "bullets": ["TODO: 时间", "TODO: 主体", "TODO: 动作"],
+      "metrics": []
+    },
+    {
+      "id": "fundamental",
+      "eyebrow": "基本面影响",
+      "headline": "TODO: 收入/成本/订单/产品中的核心变化",
+      "narration": "TODO",
+      "source_ids": ["S1"],
+      "asset_id": null,
+      "bullets": [],
+      "metrics": [
+        {"label": "指标", "value": "TODO"}
+      ]
+    },
+    {
+      "id": "mechanism",
+      "eyebrow": "影响链条",
+      "headline": "TODO: 为什么会影响公司",
+      "narration": "TODO",
+      "source_ids": ["S1"],
+      "asset_id": null,
+      "bullets": ["事件", "传导", "结果"],
+      "metrics": []
+    },
+    {
+      "id": "risk",
+      "eyebrow": "反向验证",
+      "headline": "TODO: 最关键的不确定性",
+      "narration": "TODO",
+      "source_ids": ["S1"],
+      "asset_id": null,
+      "bullets": [],
+      "metrics": []
+    },
+    {
+      "id": "cta",
+      "eyebrow": "你的判断",
+      "headline": "TODO: 留一个可讨论的问题",
+      "narration": "TODO",
+      "source_ids": [],
+      "asset_id": null,
+      "bullets": [],
+      "metrics": []
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 投研视频工作台
 
-全代码生成竖屏投研号视频（黄仁勋 GTC 解读 + 个股行情分析 + 复盘故事短剧）的完整工作台。不用剪映，用 Remotion（React 写视频）+ WebGL shader + 真实数据 + TTS 配音，全程命令行可复现。
+全代码生成竖屏投研号视频（热点基本面 + 真实资料画面 + 个股行情分析 + 复盘故事短剧）的完整工作台。不用剪映，用 Remotion（React 写视频）+ 真实数据/素材 + TTS 配音，全程命令行可复现，也可交给 Claude Code 云端执行。
 
 本工作台 = 一套**能直接跑**的项目（含 node_modules）+ 把今晚趟通的每一步、每个依赖、每个坑都写明白的文档。
 
@@ -26,13 +26,17 @@
 │   ├── 04-数据与素材来源.md      视频URL/股票数据/BGM/配音 全部来源
 │   ├── 05-剪映为什么走不通.md    加密结论 + 验证过程
 │   ├── 06-复盘故事视频.md        小于&阿本 剧情复盘视频: 改文案一键重排
-│   └── 07-Hypit试验.md           Hypit 接入试验: 词级锚点/改文案重排/三项指标
+│   ├── 07-Hypit试验.md           Hypit 接入试验: 词级锚点/改文案重排/三项指标
+│   └── 08-Claude云端视频工作流.md  给文案/主题 → 研究 → 素材 → 云端成片
+├── content/jobs/                 每条视频独立的简报/证据/素材/脚本
+├── .claude/                      云端 SessionStart、Agent 和 /make-video 命令
 ├── scripts/                      可复用脚本
 │   ├── 1-fetch-jensen-video.sh   爬 YouTube 黄仁勋演讲片段
 │   ├── 2-fetch-stock-data.py     akshare 抓 A股/美股 真实 OHLCV
 │   ├── 3-gen-voiceover.sh        edge-tts 生成配音 + 拿每句时长
 │   ├── 4-gen-bgm-sfx.sh          下无版权 BGM + 合成卡点音效
 │   ├── 5-render-and-concat.sh    渲染各段 + ffmpeg 拼接完整片
+│   ├── cloud/                    Claude 云端通用视频管线
 │   └── fupan/                    复盘故事视频管线(script.json → run.sh)
 ├── hypit-trial/                  Hypit 接入试验(前25秒, 不调生成模型, 并发2)
 ├── remotion/                     Remotion 项目(含 node_modules, 可直接跑)
@@ -43,6 +47,7 @@
 │   │   ├── StockAnalysis.tsx     NVDA K线段
 │   │   ├── StockCambricon.tsx    寒武纪折线段
 │   │   ├── fupan/                复盘故事视频(FupanStory, GSAP 按帧 seek)
+│   │   ├── cloud/                CloudVideo(热点/基本面/图像/背景视频)
 │   │   ├── WebGLGrid.tsx         WebGL shader 水波背景(关键)
 │   │   ├── FlowGrid.tsx          CSS 流动网格(WebGL 的轻量备选)
 │   │   ├── theme.ts              品牌色 + 本地字体加载
@@ -68,6 +73,19 @@ npx remotion studio
 ```
 
 环境要求 + 关键配置见 [docs/03-环境配置.md](docs/03-环境配置.md)。完整制作流程见 [docs/00-完整流程.md](docs/00-完整流程.md)。
+
+## Claude 云端：给文案或主题直接做片
+
+云端入口不要求模仿一条固定视频。你可以给完整文案，也可以只给公司、股票或行业主题：Agent 先检索热点和基本面证据，再找有明确授权的真人/实物图片或背景视频，最后生成 `CloudVideo`。
+
+```bash
+# 云端会话内也可以直接输入：/make-video 某公司最近最值得讲的基本面事件
+scripts/cloud/new-job.sh company-event
+python3 scripts/cloud/validate_job.py content/jobs/company-event
+scripts/cloud/render-job.sh content/jobs/company-event
+```
+
+每条视频必须保留四份输入：`brief.md`、`sources.json`、`assets.json`、`project.json`。热点、数字和因果结论可追溯到来源；真人/实物/现场画面可追溯到许可和署名。完整配置见 [docs/08-Claude云端视频工作流.md](docs/08-Claude云端视频工作流.md)。
 
 ## 最终成品
 

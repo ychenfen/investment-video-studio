@@ -1,0 +1,19 @@
+{
+  "as_of": "TODO: ISO-8601 with timezone",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "TODO: original filing, company release, or official data",
+      "publisher": "TODO",
+      "url": "https://example.com/replace-me",
+      "published_at": "TODO: ISO-8601",
+      "accessed_at": "TODO: ISO-8601",
+      "primary": true,
+      "status": "pending",
+      "claims": [
+        "TODO: exact claim supported by this source"
+      ],
+      "notes": "TODO: quote, table, page, or uncertainty"
+    }
+  ]
+}

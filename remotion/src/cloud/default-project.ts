@@ -1,0 +1,43 @@
+import type {CloudProject} from './CloudVideo';
+
+export const defaultCloudProject: CloudProject = {
+  schema_version: 1,
+  slug: 'cloud-preview',
+  title: '热点背后的基本面',
+  subtitle: '事件、证据与影响链条',
+  mode: 'fundamental',
+  width: 1080,
+  height: 1920,
+  fps: 30,
+  duration: 12,
+  audio_src: '',
+  disclaimer: '信息仅供研究交流，不构成投资建议。',
+  scenes: [
+    {
+      id: 'preview-hook',
+      start: 0,
+      end: 6,
+      voice_start: 0.2,
+      voice_end: 5.6,
+      eyebrow: '热点事件',
+      headline: '真正值得追的，不只是股价波动',
+      narration: '真正值得追的，不只是股价波动，而是事件有没有改变公司的基本面。',
+      source_ids: ['S1'],
+      bullets: ['事件发生了什么', '哪项数据能证明', '影响怎样传导'],
+      metrics: [],
+    },
+    {
+      id: 'preview-risk',
+      start: 6,
+      end: 12,
+      voice_start: 6.1,
+      voice_end: 11.4,
+      eyebrow: '反向验证',
+      headline: '好故事也要有风险边界',
+      narration: '把最强反例和风险一起讲清楚，内容才更可信。',
+      source_ids: ['S2'],
+      bullets: ['兑现时间', '证据缺口', '市场预期差'],
+      metrics: [],
+    },
+  ],
+};
