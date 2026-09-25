@@ -1,0 +1,366 @@
+{
+ "duration": 48.14,
+ "scenes": [
+  {
+   "id": "hook",
+   "start": 0,
+   "end": 3.068
+  },
+  {
+   "id": "struggle",
+   "start": 3.068,
+   "end": 8.522
+  },
+  {
+   "id": "dialog",
+   "start": 8.522,
+   "end": 13.475
+  },
+  {
+   "id": "money",
+   "start": 13.475,
+   "end": 19.034
+  },
+  {
+   "id": "modes",
+   "start": 19.034,
+   "end": 22.764
+  },
+  {
+   "id": "premium",
+   "start": 22.764,
+   "end": 27.858
+  },
+  {
+   "id": "fail",
+   "start": 27.858,
+   "end": 34.209
+  },
+  {
+   "id": "realize",
+   "start": 34.209,
+   "end": 41.013
+  },
+  {
+   "id": "close",
+   "start": 41.013,
+   "end": 48.14
+  }
+ ],
+ "phrases": [
+  {
+   "scene": "hook",
+   "text": "复盘三小时",
+   "s": "narr",
+   "hl": [
+    "三小时"
+   ],
+   "start": 0.35,
+   "end": 1.276
+  },
+  {
+   "scene": "hook",
+   "text": "第二天还是不知道买什么？",
+   "s": "narr",
+   "hl": [],
+   "start": 1.316,
+   "end": 2.748
+  },
+  {
+   "scene": "struggle",
+   "text": "小于每天收盘后",
+   "s": "narr",
+   "hl": [],
+   "start": 3.068,
+   "end": 4.286
+  },
+  {
+   "scene": "struggle",
+   "text": "都会复盘很久",
+   "s": "narr",
+   "hl": [],
+   "start": 4.326,
+   "end": 5.403
+  },
+  {
+   "scene": "struggle",
+   "text": "可第二天一开盘",
+   "s": "narr",
+   "hl": [],
+   "start": 5.603,
+   "end": 6.76
+  },
+  {
+   "scene": "struggle",
+   "text": "他还是不知道该做什么",
+   "s": "narr",
+   "hl": [],
+   "start": 6.8,
+   "end": 8.202
+  },
+  {
+   "scene": "dialog",
+   "text": "阿本问他",
+   "s": "narr",
+   "hl": [],
+   "start": 8.522,
+   "end": 9.211
+  },
+  {
+   "scene": "dialog",
+   "text": "你昨天到底看了什么？",
+   "s": "aben",
+   "hl": [],
+   "start": 9.251,
+   "end": 10.645
+  },
+  {
+   "scene": "dialog",
+   "text": "小于说",
+   "s": "narr",
+   "hl": [],
+   "start": 10.845,
+   "end": 11.406
+  },
+  {
+   "scene": "dialog",
+   "text": "看哪些股票涨得好啊",
+   "s": "xiaoyu",
+   "hl": [],
+   "start": 11.446,
+   "end": 13.155
+  },
+  {
+   "scene": "money",
+   "text": "阿本摇了摇头",
+   "s": "narr",
+   "hl": [],
+   "start": 13.475,
+   "end": 14.451
+  },
+  {
+   "scene": "money",
+   "text": "我更关心的是",
+   "s": "aben",
+   "hl": [],
+   "start": 14.651,
+   "end": 15.65
+  },
+  {
+   "scene": "money",
+   "text": "今天的钱",
+   "s": "aben",
+   "hl": [
+    "今天的钱"
+   ],
+   "start": 15.69,
+   "end": 16.418
+  },
+  {
+   "scene": "money",
+   "text": "到底是在哪一类股票上赚出来的",
+   "s": "aben",
+   "hl": [
+    "哪一类"
+   ],
+   "start": 16.458,
+   "end": 18.714
+  },
+  {
+   "scene": "modes",
+   "text": "是高位股",
+   "s": "aben",
+   "hl": [
+    "高位股"
+   ],
+   "start": 19.034,
+   "end": 19.819
+  },
+  {
+   "scene": "modes",
+   "text": "是低位新方向",
+   "s": "aben",
+   "hl": [
+    "低位新方向"
+   ],
+   "start": 19.859,
+   "end": 20.987
+  },
+  {
+   "scene": "modes",
+   "text": "是趋势",
+   "s": "aben",
+   "hl": [
+    "趋势"
+   ],
+   "start": 21.027,
+   "end": 21.621
+  },
+  {
+   "scene": "modes",
+   "text": "还是反包",
+   "s": "aben",
+   "hl": [
+    "反包"
+   ],
+   "start": 21.661,
+   "end": 22.444
+  },
+  {
+   "scene": "premium",
+   "text": "如果一种模式",
+   "s": "aben",
+   "hl": [],
+   "start": 22.764,
+   "end": 23.866
+  },
+  {
+   "scene": "premium",
+   "text": "第二天还能继续有溢价",
+   "s": "aben",
+   "hl": [
+    "溢价"
+   ],
+   "start": 23.906,
+   "end": 25.525
+  },
+  {
+   "scene": "premium",
+   "text": "说明资金",
+   "s": "aben",
+   "hl": [],
+   "start": 25.565,
+   "end": 26.337
+  },
+  {
+   "scene": "premium",
+   "text": "还愿意继续做它",
+   "s": "aben",
+   "hl": [],
+   "start": 26.377,
+   "end": 27.538
+  },
+  {
+   "scene": "fail",
+   "text": "但如果今天看起来很强",
+   "s": "aben",
+   "hl": [],
+   "start": 27.858,
+   "end": 29.54
+  },
+  {
+   "scene": "fail",
+   "text": "第二天却集体低开",
+   "s": "aben",
+   "hl": [
+    "集体低开"
+   ],
+   "start": 29.58,
+   "end": 30.985
+  },
+  {
+   "scene": "fail",
+   "text": "那其实已经说明",
+   "s": "aben",
+   "hl": [],
+   "start": 31.025,
+   "end": 32.301
+  },
+  {
+   "scene": "fail",
+   "text": "这种模式开始不好做了",
+   "s": "aben",
+   "hl": [
+    "不好做了"
+   ],
+   "start": 32.341,
+   "end": 33.889
+  },
+  {
+   "scene": "realize",
+   "text": "小于这才发现",
+   "s": "narr",
+   "hl": [],
+   "start": 34.209,
+   "end": 35.279
+  },
+  {
+   "scene": "realize",
+   "text": "复盘不是为了猜明天哪只会涨",
+   "s": "narr",
+   "hl": [
+    "猜明天"
+   ],
+   "start": 35.479,
+   "end": 37.397
+  },
+  {
+   "scene": "realize",
+   "text": "而是先看清",
+   "s": "narr",
+   "hl": [],
+   "start": 37.437,
+   "end": 38.386
+  },
+  {
+   "scene": "realize",
+   "text": "现在什么样的机会",
+   "s": "narr",
+   "hl": [],
+   "start": 38.426,
+   "end": 39.515
+  },
+  {
+   "scene": "realize",
+   "text": "更容易被资金认可",
+   "s": "narr",
+   "hl": [
+    "资金认可"
+   ],
+   "start": 39.555,
+   "end": 40.693
+  },
+  {
+   "scene": "close",
+   "text": "别先猜明天",
+   "s": "aben",
+   "hl": [],
+   "start": 41.013,
+   "end": 41.913
+  },
+  {
+   "scene": "close",
+   "text": "先看今天的钱",
+   "s": "aben",
+   "hl": [],
+   "start": 41.953,
+   "end": 43.056
+  },
+  {
+   "scene": "close",
+   "text": "到底是怎么赚出来的",
+   "s": "aben",
+   "hl": [],
+   "start": 43.096,
+   "end": 44.39
+  },
+  {
+   "scene": "close",
+   "text": "赚钱效应",
+   "s": "narr",
+   "hl": [
+    "赚钱效应"
+   ],
+   "start": 44.59,
+   "end": 45.405
+  },
+  {
+   "scene": "close",
+   "text": "才是市场最直接的信号",
+   "s": "narr",
+   "hl": [],
+   "start": 45.445,
+   "end": 47.04
+  }
+ ]
+}

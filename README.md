@@ -27,7 +27,9 @@
 │   ├── 05-剪映为什么走不通.md    加密结论 + 验证过程
 │   ├── 06-复盘故事视频.md        小于&阿本 剧情复盘视频: 改文案一键重排
 │   ├── 07-Hypit试验.md           Hypit 接入试验: 词级锚点/改文案重排/三项指标
-│   └── 08-云端工作流.md          云端: 给文案就出片 / 网络白名单 / 素材 key
+│   ├── 08-云端工作流.md          云端: 给文案就出片 / 网络白名单 / 素材 key
+│   ├── 09-复盘视频经验总结.md    选型/抓人手法/21 条踩坑
+│   └── 10-参考视频分析.md        对标视频拆解
 ├── scripts/                      可复用脚本
 │   ├── 1-fetch-jensen-video.sh   爬 YouTube 黄仁勋演讲片段
 │   ├── 2-fetch-stock-data.py     akshare 抓 A股/美股 真实 OHLCV
@@ -90,7 +92,7 @@ npx remotion studio
 ./scripts/studio/run.sh <slug>         # projects/<slug>/script.json → output/<slug>.mp4
 ```
 
-画面：封面 / 热点卡 / 指标卡 / 柱状 / 折线 / 多空对比 / 金句 / 纯实拍，均可叠背景实拍素材。
+画面：封面 / 热点卡 / 指标卡 / 柱状 / 折线 / 多空对比 / 金句 / 选项投票 / 纯实拍，均可叠背景实拍素材。
 示例：`projects/cambricon-fundamentals/`。详见 [docs/08-云端工作流.md](docs/08-云端工作流.md) 和 `CLAUDE.md`。
 
 ## 复盘故事视频（FupanStory）

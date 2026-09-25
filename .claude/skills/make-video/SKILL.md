@@ -55,7 +55,8 @@ slug 用英文短横线（如 `cambricon-fundamentals`）。完整示例: `proje
 | `bars` | 营收/利润等年度对比，负数自动画绿柱 | `title` `unit` `series:[{name,data:[[标签,数值]]}]` `note` `source`(必填) `asof` |
 | `line` | 走势 | 同 bars |
 | `compare` | 多空/新旧/两家公司对比 | `title` `left:{title,points}` `right:{title,points}` |
-| `point` | 金句/结论/评论引导 | `text` `sub` |
+| `point` | 金句/结论 | `text` `sub` |
+| `poll` | 结尾选项式评论引导（比"评论区聊聊"更容易让人留言） | `question` `options`(2–4 个) `reply`(评论框打字示范) |
 | `media` | 纯实拍背景 + 大字幕 | 无（配合 `media` 字段） |
 
 ### media（背景实拍/实物）
@@ -78,8 +79,10 @@ slug 用英文短横线（如 `cambricon-fundamentals`）。完整示例: `proje
 3. `bars`/`line` 基本面：营收、利润、毛利率的趋势（2–3 段）
 4. `numbers` 质量：扣非、现金流、毛利率、估值
 5. `compare` 风险：积极面 vs 要盯的风险（必须有风险段）
-6. `point` 结论 + 评论引导（提问，不给买卖建议）
+6. `point` 结论 → `poll` 选项式提问引导评论（不给买卖建议）
 技术面（K线/量价）可作为第 5 段后的"确认"补充，不做主线。
+
+更多手法（第 0 帧封面、3 秒钩子、推镜、音效等）和踩坑记录见 `docs/09-复盘视频经验总结.md`。
 
 ## 3. 出片
 

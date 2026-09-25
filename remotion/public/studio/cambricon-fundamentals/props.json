@@ -6,7 +6,7 @@
  "tag": "基本面拆解 · 688256",
  "disclaimer": "个人观点 · 仅供参考 · 不构成投资建议",
  "accent": "#FFC83D",
- "duration": 64.815,
+ "duration": 65.859,
  "voEngine": "espeak",
  "audio": "studio/cambricon-fundamentals/mix.mp3",
  "fonts": "studio/cambricon-fundamentals/fonts",
@@ -335,11 +335,10 @@
   {
    "id": "close",
    "start": 55.002,
-   "end": 64.815,
+   "end": 58.903,
    "visual": {
     "type": "point",
-    "text": "看懂财报\n比盯K线更重要",
-    "sub": "你觉得这份增长能持续吗？评论区聊聊"
+    "text": "看懂财报\n比盯K线更重要"
    },
    "media": null,
    "lines": [
@@ -350,18 +349,39 @@
      ],
      "start": 55.002,
      "end": 58.403
+    }
+   ]
+  },
+  {
+   "id": "poll",
+   "start": 58.903,
+   "end": 65.859,
+   "visual": {
+    "type": "poll",
+    "question": "你看财报先看哪一项？",
+    "options": [
+     "营收增速",
+     "盈利质量(扣非)",
+     "存货变化",
+     "客户集中度"
+    ],
+    "reply": "我先看 C，存货"
+   },
+   "media": null,
+   "lines": [
+    {
+     "text": "你看财报先看哪一项？",
+     "hl": [],
+     "start": 58.903,
+     "end": 61.801
     },
     {
-     "text": "你觉得这份增长能持续吗？",
-     "hl": [],
-     "start": 58.463,
-     "end": 61.63
-    },
-    {
-     "text": "评论区聊聊",
-     "hl": [],
-     "start": 61.69,
-     "end": 63.395
+     "text": "评论区选一个字母",
+     "hl": [
+      "选一个"
+     ],
+     "start": 61.861,
+     "end": 64.439
     }
    ]
   }

@@ -10,7 +10,7 @@ import json, re, sys
 p = sys.argv[1]
 cfg = json.load(open(p, encoding="utf8"))
 err, warn = [], []
-VIS = {"title", "news", "numbers", "bars", "line", "compare", "point", "media"}
+VIS = {"title", "news", "numbers", "bars", "line", "compare", "point", "poll", "media"}
 DATA_VIS = {"numbers", "bars", "line"}
 # 承诺收益 / 荐股 / 内幕 —— 直接判错
 BAN = ["稳赚", "必涨", "保证收益", "保本", "无风险", "翻倍股", "内幕", "带你赚钱", "跟我买", "推荐买入",
@@ -55,6 +55,8 @@ for sg in cfg.get("segments", []):
             err.append(f"{sid}: 热点卡片必须有 source(指向 sources 的 id)")
         if not v.get("date"):
             warn.append(f"{sid}: 热点卡片建议写 date, 过期热点要删")
+    if t == "poll" and not (v.get("question") and 2 <= len(v.get("options") or []) <= 4):
+        err.append(f"{sid}: poll 需要 question + 2~4 个 options")
     if not sg.get("lines"):
         err.append(f"{sid}: lines 为空")
     for ln in sg.get("lines", []):

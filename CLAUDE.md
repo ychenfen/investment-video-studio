@@ -15,12 +15,15 @@
 | 路径 | 作用 |
 |---|---|
 | `scripts/studio/` | 通用"文案→成片"管线：lint / vo / media / props / run / check |
-| `remotion/src/studio/Explainer.tsx` | 通用讲解组件（title/news/numbers/bars/line/compare/point/media 八种画面） |
+| `remotion/src/studio/Explainer.tsx` | 通用讲解组件（title/news/numbers/bars/line/compare/point/poll/media 九种画面） |
 | `projects/<slug>/` | 每支视频一个目录：script.json(唯一输入) · research.md · assets/(用户素材) · build/(中间产物, 不提交) |
 | `remotion/public/studio/<slug>/` | 生成物：props/timing/manifest/字体子集/mix.mp3/media |
 | `output/` | 成片 |
 | `scripts/cloud/` | 云端环境：setup.sh(SessionStart 自动跑) / doctor.sh(体检) |
 | `docs/08-云端工作流.md` | 云端工作流、网络白名单、密钥 |
+| `docs/09-复盘视频经验总结.md` | 选型、抓人手法、21 条踩坑（做新片前先读第 4、5 节） |
+| `docs/10-参考视频分析.md` | 对标视频拆解 |
+| `archive/fupan-workflow/` | HyperFrames v1–v3 原型、验收对照图、Kokoro 音色试听（只读存档） |
 
 ## 命令
 

@@ -16,7 +16,7 @@ export type Media = {
 export type Series = {name: string; data: [string | number, number][]};
 
 export type Visual = {
-  type: 'title' | 'news' | 'numbers' | 'bars' | 'line' | 'compare' | 'point' | 'media';
+  type: 'title' | 'news' | 'numbers' | 'bars' | 'line' | 'compare' | 'point' | 'poll' | 'media';
   // title
   kicker?: string;
   headline?: string;
@@ -35,6 +35,10 @@ export type Visual = {
   right?: {title: string; points: string[]};
   // point
   text?: string;
+  // poll (结尾选项式评论引导)
+  question?: string;
+  options?: string[];
+  reply?: string; // 评论框里打出来的示范回答
   // 数据画面公共
   source?: string;
   sourceText?: string;

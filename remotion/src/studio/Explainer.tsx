@@ -499,6 +499,79 @@ const PointCard: React.FC<{v: Visual; accent: string}> = ({v, accent}) => {
   );
 };
 
+// 结尾选项式互动: 选项比"评论区聊聊"更容易让人留言 (见 docs/09 第4节第9条)
+const PollCard: React.FC<{v: Visual; accent: string}> = ({v, accent}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const opts = v.options || [];
+  const typeStart = 10 + opts.length * 6 + fps * 0.6;
+  const reply = Array.from(v.reply || '');
+  const typed = reply.slice(0, Math.max(0, Math.floor((f - typeStart) / 3))).join('');
+  const caret = Math.floor(f / 8) % 2 === 0 ? '|' : ' ';
+  return (
+    <Card top={320}>
+      <CardTitle accent={accent}>{v.question}</CardTitle>
+      {opts.map((o, i) => {
+        const s = sp(f, fps, 8 + i * 6);
+        return (
+          <div
+            key={i}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 22,
+              marginBottom: 18,
+              padding: '22px 26px',
+              borderRadius: 22,
+              background: 'rgba(255,255,255,0.06)',
+              border: `2px solid ${C.line}`,
+              fontSize: 40,
+              fontWeight: 700,
+              opacity: s,
+              transform: `translateX(${(1 - s) * 50}px)`,
+            }}
+          >
+            <span
+              style={{
+                width: 60,
+                height: 60,
+                flex: '0 0 60px',
+                borderRadius: 16,
+                background: accent,
+                color: '#141414',
+                fontWeight: 900,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {String.fromCharCode(65 + i)}
+            </span>
+            {o}
+          </div>
+        );
+      })}
+      {reply.length ? (
+        <div
+          style={{
+            marginTop: 26,
+            padding: '20px 26px',
+            borderRadius: 999,
+            background: 'rgba(255,255,255,0.92)',
+            color: '#222',
+            fontSize: 36,
+            fontWeight: 700,
+            opacity: f >= typeStart - 6 ? 1 : 0,
+          }}
+        >
+          {typed || <span style={{color: '#999'}}>说点什么…</span>}
+          {typed.length < reply.length ? caret : ''}
+        </div>
+      ) : null}
+    </Card>
+  );
+};
+
 const VisualLayer: React.FC<{v: Visual; accent: string; brand: string}> = ({v, accent, brand}) => {
   switch (v.type) {
     case 'title':
@@ -515,6 +588,8 @@ const VisualLayer: React.FC<{v: Visual; accent: string; brand: string}> = ({v, a
       return <CompareCard v={v} accent={accent} />;
     case 'point':
       return <PointCard v={v} accent={accent} />;
+    case 'poll':
+      return <PollCard v={v} accent={accent} />;
     default:
       return null;
   }
