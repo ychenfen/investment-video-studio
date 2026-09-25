@@ -84,7 +84,7 @@ def riser(end,dur=1.5,v=-20):
     n=int(dur*SR); tt=np.arange(n)/SR; f=200+1400*(tt/dur)**2
     s=np.sin(2*np.pi*np.cumsum(f)/SR)*0.4+np.convolve(rng.standard_normal(n),np.ones(4)/4,'same')*0.6
     add(X,end-dur,s*(tt/dur)**2*db(v))
-def chime(at,v=-16): 
+def chime(at,v=-16):
     for i,m in enumerate([76,79,84]): add(X,at+i*0.07,tone(hz(m),0.6,6,v,(1,.3)))
 for s in T['scenes'][1:]: whoosh(s['start'])
 # hook
