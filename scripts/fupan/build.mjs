@@ -372,7 +372,7 @@ const html = `<!doctype html>
       .tg2 { padding: 16px 30px; border-radius: 18px; font-size: 48px; font-weight: 900; }
       .tg2-g { background: linear-gradient(90deg, var(--gold2), var(--gold)); color: #231800; }
       .tg2-x { background: #2a3552; color: #c9d4f1; }
-      
+
       #pr-relay b { color: var(--up); font-size: 40px; }
       .today { position: absolute; left: 70px; bottom: 250px; width: 150px; display: flex; flex-direction: column; align-items: center; }
       .today .tv { font-family: "Num"; font-weight: 700; font-size: 40px; color: var(--up); margin-bottom: 8px; }

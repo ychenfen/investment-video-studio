@@ -244,5 +244,5 @@ export function buildTimeline(gsap) {
       punch("ct", PH("cta", 3).start + 0.75, 1.04);
 
       return tl;
-    
+
 }
