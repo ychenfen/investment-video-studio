@@ -8,8 +8,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const GEN = path.resolve(HERE, "../../remotion/src/fupan/generated");
-const WORK = path.resolve(HERE, "work");
+const GEN = path.resolve(process.env.FUPAN_GEN || path.join(HERE, "../../remotion/src/fupan/generated"));
+const WORK = path.resolve(process.env.FUPAN_WORK || path.join(HERE, "work"));
 import { person, avatar, XIAOYU, ABEN, CROWD } from "./chars.mjs";
 const T = JSON.parse(fs.readFileSync(path.join(GEN, "timing.json"), "utf8"));
 const D = Math.ceil(T.duration * 10) / 10;
@@ -476,9 +476,9 @@ const html = `<!doctype html>
           <div class="cup" style="left:300px"></div><div class="cup" style="left:640px"></div><div class="pot"></div>
           <i class="steam" id="dg-s1" style="left:320px;top:690px"></i><i class="steam" id="dg-s2" style="left:660px;top:690px"></i>
           <div class="dots3" id="dg-t1" style="left:60px;top:380px"><i></i><i></i><i></i></div>
-          <div class="sb" id="dg-b1">你昨天到底看了什么？</div>
+          <div class="sb" id="dg-b1">${esc(PH("dialog")[1].text)}</div>
           <div class="dots3" id="dg-t2" style="right:60px;top:400px"><i></i><i></i><i></i></div>
-          <div class="sb" id="dg-b2">看哪些股票涨得好啊</div>
+          <div class="sb" id="dg-b2">${esc(PH("dialog")[3].text)}</div>
         </div>
       </div></div></div></section>
 
@@ -832,6 +832,7 @@ let markup = html.slice(html.indexOf("<body>") + 6, html.lastIndexOf("<script>")
 markup = markup.replace('<div id="root"', '<div id="fp-root"').replace(/\s*<audio[^>]*><\/audio>/, "").trim();
 let tlSrc = html.slice(html.lastIndexOf("<script>") + 8, html.lastIndexOf("</script>"));
 tlSrc = tlSrc.replace('window.__timelines["main"] = tl;', "return tl;");
+tlSrc = tlSrc.replace(/[ \t]+$/gm, ""); // 生成文件不留行尾空格
 const banner = "// ⚠️ 自动生成, 勿手改 —— 源在 scripts/fupan/build.mjs\n";
 fs.mkdirSync(GEN, { recursive: true });
 fs.writeFileSync(path.join(GEN, "markup.ts"), banner + "export const markup = " + JSON.stringify(markup) + ";\n");

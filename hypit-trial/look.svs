@@ -1,0 +1,13 @@
+<?svml using="@hypit/svs@1"?>
+<sheet version="1">
+  film.main { background: #070d1c; }
+  caption.primary {
+    stack-order: 70; x: 0.5; y: 0.715; width: 0.9; height: 0.07;
+    anchor-x: center; anchor-y: bottom; align: center; block-align: end; inline-size: fixed;
+    wrap: word; size: 56; line-height: 1.15; fill: #5d6782;
+    background: #00000000; padding: "0"; radius: 0;
+    karaoke: trail; karaoke-transition: step; active-fill: #FFFFFF;
+    cue-enter: spring; cue-enter-frames: 5; cue-enter-start-scale: 0.94;
+    cue-exit: none; lead-frames: 0; tail-frames: 6; handoff: cut;
+  }
+</sheet>

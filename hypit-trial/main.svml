@@ -1,0 +1,103 @@
+<?svml using="@hypit/markup@1"?>
+<!-- 自动生成(gen-script.mjs) -->
+<svml>
+  <import as="copy" source="./authors/script.svml"/>
+  <import as="asset" from="@hypit/media@1"/>
+  <import as="pipeline" from="@hypit/media-pipeline@1"/>
+  <import as="whisperx" from="@hypit/whisperx@1"/>
+  <import as="time" from="@hypit/timeline-author@1"/>
+  <import as="spatial" from="@hypit/spatial@1"/>
+  <import as="fonts" from="@hypit/fonts-open@1"/>
+  <import as="sound" from="@hypit/sound@1"/>
+  <import as="audio" from="@hypit/audio-track@1"/>
+  <import as="caption-fine" from="@hypit/caption-fine@1"/>
+  <import as="film" from="@hypit/film@1"/>
+  <import as="render" from="@hypit/render-hyperframes@1"/>
+  <import as="fs" from="@example/fupan-scene@1"/>
+  <import as="look" source="./look.svs"/>
+
+  <time:Clock id="clock" frame-rate="30"/>
+  <spatial:Canvas id="canvas" width="1080" height="1920"/>
+  <asset:Audio id="voice" src="./assets/voice.wav"/>
+  <asset:Audio id="bed" src="./assets/music-sfx.wav"/>
+  <pipeline:Normalize id="voice-media" source={voice} clock={clock} video="none" audio="default" span-authority="audio"/>
+  <pipeline:Normalize id="bed-media" source={bed} clock={clock} video="none" audio="default" span-authority="audio"/>
+  <whisperx:SemanticTake id="all" narrative={copy.story} segment={copy.story.segment.all} media={voice-media.media} language="zh"/>
+  <time:Timeline id="program" clock={clock} end="content.end">
+    <time:Take source={all.take}/>
+  </time:Timeline>
+
+  <fs:Scene id="story" timeline={program.timeline} canvas={canvas} during="program">
+    <fs:Phrase id="p0" scene="hook" speaker="narr" during={copy.story.selection.p0}/>
+    <fs:Phrase id="p1" scene="hook" speaker="narr" during={copy.story.selection.p1}/>
+    <fs:Phrase id="p2" scene="hook" speaker="narr" during={copy.story.selection.p2}/>
+    <fs:Phrase id="p3" scene="hook" speaker="narr" during={copy.story.selection.p3}/>
+    <fs:Phrase id="p4" scene="struggle" speaker="narr" during={copy.story.selection.p4}/>
+    <fs:Phrase id="p5" scene="struggle" speaker="narr" during={copy.story.selection.p5}/>
+    <fs:Phrase id="p6" scene="struggle" speaker="narr" during={copy.story.selection.p6}/>
+    <fs:Phrase id="p7" scene="struggle" speaker="narr" during={copy.story.selection.p7}/>
+    <fs:Phrase id="p8" scene="dialog" speaker="narr" during={copy.story.selection.p8}/>
+    <fs:Phrase id="p9" scene="dialog" speaker="aben" during={copy.story.selection.p9}/>
+    <fs:Phrase id="p10" scene="dialog" speaker="narr" during={copy.story.selection.p10}/>
+    <fs:Phrase id="p11" scene="dialog" speaker="xiaoyu" during={copy.story.selection.p11}/>
+    <fs:Phrase id="p12" scene="money" speaker="narr" during={copy.story.selection.p12}/>
+    <fs:Phrase id="p13" scene="money" speaker="aben" during={copy.story.selection.p13}/>
+    <fs:Phrase id="p14" scene="money" speaker="aben" during={copy.story.selection.p14}/>
+    <fs:Phrase id="p15" scene="money" speaker="aben" during={copy.story.selection.p15}/>
+    <fs:Phrase id="p16" scene="modes" speaker="aben" during={copy.story.selection.p16}/>
+    <fs:Phrase id="p17" scene="modes" speaker="aben" during={copy.story.selection.p17}/>
+    <fs:Phrase id="p18" scene="modes" speaker="aben" during={copy.story.selection.p18}/>
+    <fs:Phrase id="p19" scene="modes" speaker="aben" during={copy.story.selection.p19}/>
+    <fs:Phrase id="p20" scene="premium" speaker="aben" during={copy.story.selection.p20}/>
+    <fs:Phrase id="p21" scene="premium" speaker="aben" during={copy.story.selection.p21}/>
+    <fs:Phrase id="p22" scene="premium" speaker="aben" during={copy.story.selection.p22}/>
+    <fs:Phrase id="p23" scene="premium" speaker="aben" during={copy.story.selection.p23}/>
+    <fs:Phrase id="p24" scene="fail" speaker="aben" during={copy.story.selection.p24}/>
+    <fs:Phrase id="p25" scene="fail" speaker="aben" during={copy.story.selection.p25}/>
+    <fs:Phrase id="p26" scene="fail" speaker="aben" during={copy.story.selection.p26}/>
+    <fs:Phrase id="p27" scene="fail" speaker="aben" during={copy.story.selection.p27}/>
+    <fs:Phrase id="p28" scene="realize" speaker="narr" during={copy.story.selection.p28}/>
+    <fs:Phrase id="p29" scene="realize" speaker="narr" during={copy.story.selection.p29}/>
+    <fs:Phrase id="p30" scene="realize" speaker="narr" during={copy.story.selection.p30}/>
+    <fs:Phrase id="p31" scene="realize" speaker="narr" during={copy.story.selection.p31}/>
+    <fs:Phrase id="p32" scene="realize" speaker="narr" during={copy.story.selection.p32}/>
+    <fs:Phrase id="p33" scene="close" speaker="aben" during={copy.story.selection.p33}/>
+    <fs:Phrase id="p34" scene="close" speaker="aben" during={copy.story.selection.p34}/>
+    <fs:Phrase id="p35" scene="close" speaker="aben" during={copy.story.selection.p35}/>
+    <fs:Phrase id="p36" scene="close" speaker="narr" during={copy.story.selection.p36}/>
+    <fs:Phrase id="p37" scene="close" speaker="narr" during={copy.story.selection.p37}/>
+    <fs:Phrase id="p38" scene="cta" speaker="narr" during={copy.story.selection.p38}/>
+    <fs:Phrase id="p39" scene="cta" speaker="narr" during={copy.story.selection.p39}/>
+    <fs:Phrase id="p40" scene="cta" speaker="narr" during={copy.story.selection.p40}/>
+    <fs:Phrase id="p41" scene="cta" speaker="narr" during={copy.story.selection.p41}/>
+    <fs:Phrase id="p42" scene="cta" speaker="narr" during={copy.story.selection.p42}/>
+    <fs:Moment id="k0" key="hook|0|三小时" at={copy.story.moment.k0}/>
+    <fs:Moment id="k1" key="hook|3|看错了" at={copy.story.moment.k1}/>
+    <fs:Moment id="k2" key="money|2|今天的钱" at={copy.story.moment.k2}/>
+    <fs:Moment id="k3" key="fail|1|集体低开" at={copy.story.moment.k3}/>
+    <fs:Moment id="k4" key="realize|4|资金认可" at={copy.story.moment.k4}/>
+    <fs:Moment id="k5" key="close|3|赚钱效应" at={copy.story.moment.k5}/>
+    <fs:Moment id="k6" key="cta|1|哪一类" at={copy.story.moment.k6}/>
+  </fs:Scene>
+
+  <fonts:Stack id="cap-font" family="noto-sans-sc" weight="900" style="normal"/>
+  <caption-fine:Style id="cap" recipe={look.caption.primary} font={cap-font}/>
+  <caption-fine:Track id="captions" document={copy.story.caption} timeline={program.timeline}>
+    <caption-fine:Use style={cap}/>
+  </caption-fine:Track>
+  <sound:Style id="voice-style"/>
+  <sound:Track id="voice-track" timeline={program.timeline}>
+    <sound:Use style={voice-style}/>
+  </sound:Track>
+  <audio:Track id="bed-track" timeline={program.timeline}>
+    <audio:Item id="bed-item" source={bed-media.media} during="program" playback="once" gain="1"/>
+  </audio:Track>
+  <film:Film id="main" canvas={canvas} timeline={program.timeline} appearance={look.film.main}>
+    <film:Track source={story.track}/>
+    <film:Track source={captions.track}/>
+    <film:Track source={voice-track.audio}/>
+    <film:Track source={bed-track.audio}/>
+  </film:Film>
+  <render:Video id="trial" composition={main.composition} timeline={program.timeline} start-frame="0" end-frame-exclusive="750"/>
+  <render:Video id="full" composition={main.composition} timeline={program.timeline}/>
+</svml>

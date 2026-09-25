@@ -1,0 +1,36 @@
+{
+  "format": "hypit.runtime-local@1",
+  "dataRoot": ".hypit/runtimes/local",
+  "endpoints": {
+    "media.local": {
+      "use": "@hypit/provider-media-local",
+      "config": {
+        "defaultConcurrency": 1
+      }
+    },
+    "hyperframes.local": {
+      "use": "@hypit/provider-hyperframes-local",
+      "config": {
+        "workers": 2,
+        "defaultConcurrency": 1,
+        "chromePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      }
+    },
+    "whisperx.local": {
+      "use": "@hypit/provider-whisperx-local",
+      "config": {
+        "baseUrl": "http://127.0.0.1:8765",
+        "serviceCommand": [
+          "node",
+          "stub/whisperx-stub.mjs"
+        ],
+        "alignmentLanguages": [
+          "zh"
+        ]
+      }
+    }
+  },
+  "bindings": {
+    "@hypit/whisperx@1#whisperx-alignment": "whisperx.local"
+  }
+}

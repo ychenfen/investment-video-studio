@@ -25,7 +25,8 @@
 │   ├── 03-环境配置.md            node/python/代理/chrome/字体
 │   ├── 04-数据与素材来源.md      视频URL/股票数据/BGM/配音 全部来源
 │   ├── 05-剪映为什么走不通.md    加密结论 + 验证过程
-│   └── 06-复盘故事视频.md        小于&阿本 剧情复盘视频: 改文案一键重排
+│   ├── 06-复盘故事视频.md        小于&阿本 剧情复盘视频: 改文案一键重排
+│   └── 07-Hypit试验.md           Hypit 接入试验: 词级锚点/改文案重排/三项指标
 ├── scripts/                      可复用脚本
 │   ├── 1-fetch-jensen-video.sh   爬 YouTube 黄仁勋演讲片段
 │   ├── 2-fetch-stock-data.py     akshare 抓 A股/美股 真实 OHLCV
@@ -33,6 +34,7 @@
 │   ├── 4-gen-bgm-sfx.sh          下无版权 BGM + 合成卡点音效
 │   ├── 5-render-and-concat.sh    渲染各段 + ffmpeg 拼接完整片
 │   └── fupan/                    复盘故事视频管线(script.json → run.sh)
+├── hypit-trial/                  Hypit 接入试验(前25秒, 不调生成模型, 并发2)
 ├── remotion/                     Remotion 项目(含 node_modules, 可直接跑)
 │   ├── src/                      组件
 │   │   ├── Root.tsx              注册所有 composition
@@ -86,7 +88,7 @@ npx remotion studio
 ./scripts/fupan/run.sh                    # 配音 → 时间轴 → 画面 → 字体 → 混音 → 渲染
 ```
 
-详见 [docs/06-复盘故事视频.md](docs/06-复盘故事视频.md)。
+详见 [docs/06-复盘故事视频.md](docs/06-复盘故事视频.md)。同一套画面接入 Hypit(事件绑在词上、改文案自动重排)的试验见 [docs/07-Hypit试验.md](docs/07-Hypit试验.md)。
 
 ## 可复用性
 
