@@ -41,7 +41,12 @@ if args.engine == "kokoro":
         assert sr == SR
         return a.astype(np.float32)
 else:
+    import ssl
     import edge_tts
+    import edge_tts.communicate as _ec
+    # 云端代理会重签 TLS; edge-tts 默认只信 certifi, 这里改信系统/代理 CA
+    if os.environ.get("SSL_CERT_FILE"):
+        _ec._SSL_CTX = ssl.create_default_context(cafile=os.environ["SSL_CERT_FILE"])
 
     def synth(text, spk):
         with tempfile.TemporaryDirectory() as d:

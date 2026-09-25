@@ -17,7 +17,9 @@ PUB="$REPO/remotion/public/fupan"
 WORK="$HERE/work"
 PY="${PYTHON:-python3}"
 mkdir -p "$WORK" "$GEN" "$PUB"
-export EDGE_PROXY="${EDGE_PROXY:-http://127.0.0.1:7897}"
+# 本机(macOS)默认走 Clash 7897; 云端走 HTTPS_PROXY
+[ "$(uname)" = "Darwin" ] && export EDGE_PROXY="${EDGE_PROXY:-http://127.0.0.1:7897}"
+export EDGE_PROXY="${EDGE_PROXY:-${HTTPS_PROXY:-}}"
 
 if [ "${SKIP_VO:-0}" != "1" ]; then
   echo "== 1/5 配音 + 句级时间轴 (${TTS_ENGINE:-edge})"
@@ -39,7 +41,13 @@ ffmpeg -v error -y -i "$WORK/mix_raw.wav" -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 
 if [ "${SKIP_RENDER:-0}" != "1" ]; then
   echo "== 5/5 Remotion 渲染"
   cd "$REPO/remotion"
-  CHROME="${CHROME:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
+  CHROME="${CHROME:-}"
+  if [ -z "$CHROME" ]; then
+    for c in "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+             /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell; do
+      [ -x "$c" ] && { CHROME="$c"; break; }
+    done
+  fi
   OUT="${OUT:-$REPO/output/复盘看赚钱效应.mp4}"
   npx remotion render src/index.ts FupanStory "$OUT" \
     --browser-executable="$CHROME" --concurrency="${CONCURRENCY:-1}" --crf 18
