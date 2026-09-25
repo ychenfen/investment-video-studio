@@ -1,6 +1,6 @@
 # 投研视频工作台
 
-全代码生成竖屏投研号视频（黄仁勋 GTC 解读 + 个股行情分析）的完整工作台。不用剪映，用 Remotion（React 写视频）+ WebGL shader + 真实数据 + TTS 配音，全程命令行可复现。
+全代码生成竖屏投研号视频（黄仁勋 GTC 解读 + 个股行情分析 + 复盘故事短剧）的完整工作台。不用剪映，用 Remotion（React 写视频）+ WebGL shader + 真实数据 + TTS 配音，全程命令行可复现。
 
 本工作台 = 一套**能直接跑**的项目（含 node_modules）+ 把今晚趟通的每一步、每个依赖、每个坑都写明白的文档。
 
@@ -24,13 +24,15 @@
 │   ├── 02-踩坑与解决方案.md      今晚趟过的全部坑(最有价值)
 │   ├── 03-环境配置.md            node/python/代理/chrome/字体
 │   ├── 04-数据与素材来源.md      视频URL/股票数据/BGM/配音 全部来源
-│   └── 05-剪映为什么走不通.md    加密结论 + 验证过程
+│   ├── 05-剪映为什么走不通.md    加密结论 + 验证过程
+│   └── 06-复盘故事视频.md        小于&阿本 剧情复盘视频: 改文案一键重排
 ├── scripts/                      可复用脚本
 │   ├── 1-fetch-jensen-video.sh   爬 YouTube 黄仁勋演讲片段
 │   ├── 2-fetch-stock-data.py     akshare 抓 A股/美股 真实 OHLCV
 │   ├── 3-gen-voiceover.sh        edge-tts 生成配音 + 拿每句时长
 │   ├── 4-gen-bgm-sfx.sh          下无版权 BGM + 合成卡点音效
-│   └── 5-render-and-concat.sh    渲染各段 + ffmpeg 拼接完整片
+│   ├── 5-render-and-concat.sh    渲染各段 + ffmpeg 拼接完整片
+│   └── fupan/                    复盘故事视频管线(script.json → run.sh)
 ├── remotion/                     Remotion 项目(含 node_modules, 可直接跑)
 │   ├── src/                      组件
 │   │   ├── Root.tsx              注册所有 composition
@@ -38,6 +40,7 @@
 │   │   ├── NewsStyle.tsx         黄仁勋 Agent 解读段(竖屏)
 │   │   ├── StockAnalysis.tsx     NVDA K线段
 │   │   ├── StockCambricon.tsx    寒武纪折线段
+│   │   ├── fupan/                复盘故事视频(FupanStory, GSAP 按帧 seek)
 │   │   ├── WebGLGrid.tsx         WebGL shader 水波背景(关键)
 │   │   ├── FlowGrid.tsx          CSS 流动网格(WebGL 的轻量备选)
 │   │   ├── theme.ts              品牌色 + 本地字体加载
@@ -73,6 +76,17 @@ npx remotion studio
 3. 寒武纪行情(20s)：红涨折线 + 量柱 + 放量/缩量/突破标注 + 免责
 
 全程：WebGL 水波背景（网格随波扭曲 + 流光斑，中央内容不透明挡波浪）、云扬 TTS 配音、字幕逐句对齐、BGM ducking、真实行情数据。
+
+## 复盘故事视频（FupanStory）
+
+`output/复盘看赚钱效应.mp4` —— 56s，1080×1920：两个原创角色小于 & 阿本，深夜书房 / 茶室两个实景，散户群像、资金接力、逐字字幕 + 口型、按剧情走的配乐。画面 100% 代码生成，不调用任何图片/视频生成模型。
+
+```bash
+# 改 scripts/fupan/script.json 的文案, 然后:
+./scripts/fupan/run.sh                    # 配音 → 时间轴 → 画面 → 字体 → 混音 → 渲染
+```
+
+详见 [docs/06-复盘故事视频.md](docs/06-复盘故事视频.md)。
 
 ## 可复用性
 
